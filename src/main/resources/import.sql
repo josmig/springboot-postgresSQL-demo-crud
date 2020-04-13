@@ -1,0 +1,2 @@
+insert into persona (id,nombre,apellido_p,apellido_m,fecha_naci,email,create_at)values(1,'Miguel','Pantigoso','Puraca','1998-03-30','pantigosomiguel59@gmail.com','2020-05-08 18:47:59')
+insert into persona (id,nombre,apellido_p,apellido_m,fecha_naci,email,create_at)values(2,'Hernan','Pantigoso','Cutipa','1960-02-02','hernanpantigoso@gmail.com','2020-05-08 18:47:59')

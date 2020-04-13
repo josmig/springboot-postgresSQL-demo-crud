@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head  th:replace="layout/layout :: cabecera"></head>
+<body>
+<header th:replace="layout/layout :: menu"></header>
+<div class="container">
+    <h1 th:text="${titulo}"></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Email</th>
+                <th>Creado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="p : ${person}">
+                <td th:text="${p.nombre}"></td>
+                <td th:text="${p.apellido_p}"></td>
+                <td th:text="${p.apellido_m}"></td>
+                <td th:text="${p.fechaNaci}"></td>
+                <td th:text="${p.email}"></td>
+                <td th:text="${p.createAt}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<footer th:replace="layout/layout :: piedepagina"></footer>
+</body>
+</html>
