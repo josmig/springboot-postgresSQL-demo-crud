@@ -28,12 +28,15 @@ public class PersonaServiceImpl implements IPersonaService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Persona find(Long id) {
         return personaDao.findById(id).orElse(null);
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
+        personaDao.deleteById(id);
 
     }
 }

@@ -51,5 +51,14 @@ public class PersonaController {
         model.addAttribute("per",persona);
         return "persona/form";
     }
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable(value = "id")Long id){
+
+        if(id > 0){
+            personaService.delete(id);
+        }
+        return "redirect:/person/listar";
+    }
+
 
 }

@@ -29,6 +29,8 @@
                 <td>
                     <a class="btn btn-outline-info"
                        th:href="@{/person/form/} + ${p.id}">Editar</a>
+                    <a class="btn btn-outline-danger"
+                       th:href="@{/person/delete/} + ${p.id}">Eliminar</a>
                 </td>
 
                 <td th:text="${p.id}" hidden></td>
