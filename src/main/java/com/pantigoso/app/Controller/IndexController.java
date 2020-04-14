@@ -9,7 +9,8 @@ public class IndexController {
 
     @RequestMapping({"home","/"})
     public String index(Model model){
-        model.addAttribute("title_menu","SpringBootAPP");
+
+        model.addAttribute("title","SpringBootAPP");
         return "index";
     }
 }

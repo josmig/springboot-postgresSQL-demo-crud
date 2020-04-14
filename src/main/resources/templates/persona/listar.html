@@ -5,6 +5,7 @@
 <header th:replace="layout/layout :: menu"></header>
 <div class="container">
     <h1 th:text="${titulo}"></h1>
+    <a th:href="@{/person/form}" class="btn btn-primary mt-3 mb-3">Inscribir usuario</a>
     <table class="table">
         <thead>
             <tr>
@@ -24,6 +25,7 @@
                 <td th:text="${p.fechaNaci}"></td>
                 <td th:text="${p.email}"></td>
                 <td th:text="${p.createAt}"></td>
+                <td th:text="${p.id}" hidden></td>
             </tr>
         </tbody>
     </table>

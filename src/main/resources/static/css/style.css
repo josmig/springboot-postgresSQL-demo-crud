@@ -6,3 +6,10 @@
 .contenedor{
     height: 100vw;
 }
+.linea{
+    border: 2px solid #FFC107;
+    display: inline-block;
+    width: 100px;
+    position: relative;
+    top: -10px;
+}

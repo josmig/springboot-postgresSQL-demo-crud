@@ -34,7 +34,7 @@ public class Persona implements Serializable {
     @Column(name = "fecha_naci")
     @NotNull
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-DD")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaNaci;
 
     @Column
