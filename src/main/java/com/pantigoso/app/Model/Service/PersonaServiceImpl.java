@@ -29,7 +29,7 @@ public class PersonaServiceImpl implements IPersonaService {
 
     @Override
     public Persona find(Long id) {
-        return null;
+        return personaDao.findById(id).orElse(null);
     }
 
     @Override
