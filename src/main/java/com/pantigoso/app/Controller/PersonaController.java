@@ -5,7 +5,10 @@ import com.pantigoso.app.Model.Service.PersonaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/person")
@@ -30,13 +33,22 @@ public class PersonaController {
         String titulo= "Formulario de Inscripción";
         //instancia del objeto a crear
         Persona persona = new Persona();
-        model.addAttribute("per",persona);
+        //model.addAttribute("per",persona);
+        model.addAttribute("persona",persona);
         model.addAttribute("title",titulo);
         return "persona/form";
     }
 
+
     @PostMapping("/form")
-    public String guardar(@ModelAttribute("per")Persona persona, Model model){
+    //@ModelAttribute("per")
+    public String guardar(@Valid Persona persona, BindingResult bindingResult, Model model){
+        //Si hay errores retorna al formulario
+        if(bindingResult.hasErrors()){
+            String titulo = "Formulario";
+            model.addAttribute("title",titulo);
+            return "persona/form";
+        }
         personaService.save(persona);
         return "redirect:/person/listar";
     }
@@ -53,7 +65,6 @@ public class PersonaController {
     }
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable(value = "id")Long id){
-
         if(id > 0){
             personaService.delete(id);
         }

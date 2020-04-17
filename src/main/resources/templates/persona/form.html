@@ -8,29 +8,37 @@
             <div class="col-md-6">
                 <h2 th:text="${title}"></h2>
                 <span class="linea"></span>
-                <form th:action="@{/person/form}" th:object="${per}" method="post">
+                <form th:action="@{/person/form}" th:object="${persona}" method="post">
                     <div class="form-group">
                         <label for="nombre">Nombres</label>
                         <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
+                        <span class="badge badge-danger"
+                              th:field="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></span>
                     </div>
                     <div class="form-group">
                         <label for="app-p">Apellido Paterno</label>
                         <input type="text" class="form-control" id="app-p" th:field="*{apellido_p}">
+                        <span class="badge badge-danger"
+                              th:field="${#fields.hasErrors('apellido_p')}" th:errors="*{apellido_p}"></span>
                     </div>
                     <div class="form-group">
                         <label for="app-m">Apellido Materno</label>
                         <input type="text" class="form-control" id="app-m" th:field="*{apellido_m}">
+                        <span class="badge badge-danger"
+                              th:field="${#fields.hasErrors('apellido_m')}" th:errors="*{apellido_m}"></span>
                     </div>
                     <div class="form-group">
                         <label for="correo">Correo Electronico</label>
-                        <input type="email" class="form-control" id="correo" th:field="*{email}"
+                        <input type="text" class="form-control" id="correo" th:field="*{email}"
                                aria-describedby="emailHelp">
-                        <small id="emailHelp" class="form-text text-muted">
-                            We'll never share your email with anyone else.</small>
+                        <span class="badge badge-danger"
+                              th:field="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
                     </div>
                     <div class="form-group">
                         <label for="naci">Fecha de Nacimiento</label>
                         <input type="text" class="form-control" id="naci" th:field="*{fechaNaci}">
+                        <span class="badge badge-danger"
+                              th:field="${#fields.hasErrors('fechaNaci')}" th:errors="*{fechaNaci}"></span>
                     </div>
                     <input type="submit" class="btn btn-primary btn-block" value="Crear usuario">
                     <input type="hidden" th:field="*{id}">
